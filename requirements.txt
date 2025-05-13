@@ -1,2 +1,4 @@
 django
 django-widget-tweaks
+python-dateutil
+pandas
