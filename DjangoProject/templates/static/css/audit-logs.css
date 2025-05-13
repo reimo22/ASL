@@ -1,0 +1,75 @@
+/* Audit Logs Page Specific Styles */
+
+.audit-logs-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #FFF5F6;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+.audit-logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.audit-logs-table th {
+    background-color: #B0C4DE;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.audit-logs-table td {
+    padding: 12px 15px;
+    background-color: #F8E1EB;
+    border: 1px solid white;
+    font-size: 14px;
+}
+
+.audit-logs-table tr:hover td {
+    background-color: #F5D0E0;
+}
+
+.user-cell {
+    color: #5D76CB;
+}
+
+.action-cell {
+    font-weight: bold;
+}
+
+/* Content visibility control */
+#audit-logs-content {
+    display: none;
+    width: 100%;
+}
+
+#audit-logs-content.active {
+    display: block;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .audit-logs-table th, 
+    .audit-logs-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .audit-logs-table {
+        font-size: 11px;
+    }
+    
+    .audit-logs-table th, 
+    .audit-logs-table td {
+        padding: 6px 8px;
+    }
+}

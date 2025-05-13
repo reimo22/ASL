@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/homepage.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'attendance' %}">ATTENDANCE</a></li>
+                <li><a href="{% url 'payroll' %}">PAYROLL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-option active" id="audit-logs">AUDIT LOGS</div>
+        </div>
+
+        <div class="main-content">
+            <div class="rating-section">
+                <div class="rating-options">
+                    <div class="rating-option active" id="overall-option">OVERALL</div>
+                    <div class="rating-option" id="a-option">A</div>
+                    <div class="rating-option" id="b-option">B</div>
+                    <div class="rating-option" id="c-option">C</div>
+                    <div class="rating-option" id="d-option">D</div>
+                    <div class="rating-option" id="e-option">E</div>                    
+                </div>
+            </div>
+
+            <!-- Homepage Content -->
+            <div id="homepage-content" class="content-section active">
+                <div class="dashboard">
+                    <div class="left-side">
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoHumans.png' %}" alt="Employees Icon">
+                            </div>
+                            <p>0</p>
+                            <span>NO. OF EMPLOYEES</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoDepartments.png' %}" alt="Departments Icon">
+                            </div>
+                            <p>0</p>
+                            <span>NO. OF DEPARTMENTS</span>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="chart">
+                                <div class="bar bar1"></div>
+                                <div class="bar bar2"></div>
+                                <div class="bar bar3"></div>
+                                <div class="bar bar4"></div>
+                            </div>
+                            <div class="x-axis"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="right-side">
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoNormalWorkingHours.png' %}" alt="Working Hours Icon">
+                            </div>
+                            <p>00 Hours</p>
+                            <span>NORMAL WORKING HRS.</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoOvertime.png' %}" alt="Overtime Icon">
+                            </div>
+                            <p>00 Hours</p>
+                            <span>OVERTIME TOTAL</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoTotalTime.png' %}" alt="Total Time Icon">
+                            </div>
+                            <p>00h:00m:00s</p>
+                            <span>TOTAL TIME</span>
+                        </div>
+                        <div class="stat-box">
+                            <div class="icon">
+                                <img src="{% static 'assets/logoMoney.png' %}" alt="Money Icon">
+                            </div>
+                            <p>₱00,000.00</p>
+                            <span>OUTGOING MONEY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Content -->
+            <div id="department-content" class="content-section">
+                <div class="department-dashboard">
+                    <div class="left-side">
+                        <div class="stat-box">
+                            <span>HUMAN RESOURCES</span>
+                            <span>DEPARTMENT</span>
+                        </div>
+                        <div class="diagram-box">
+                            <span>Diagram</span>
+                        </div>
+                    </div>
+                    
+                    <div class="right-side">
+                        <div class="stat-box">
+                            <span>DANN MARTIN LEYES</span>
+                            <span>LEADER NAME</span>
+                        </div>
+                        <div class="scrollable-list">
+                            <h2>MEMBERS:</h2>
+                            <ul>
+                                <li>
+                                    <span>LaMello Tall</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Ashton Hall</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                                <li>
+                                    <span>Ashford Ball</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Eyemish Hue</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                                <li>
+                                    <span>Boebohka Bhat</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Bachkit Ghanon</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                                <li>
+                                    <span>Member 7</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Member 8</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                                <li>
+                                    <span>Member 9</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Member 10</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                                <li>
+                                    <span>Member 11</span>
+                                    <div class="member-indicator pink"></div>
+                                </li>
+                                <li>
+                                    <span>Member 12</span>
+                                    <div class="member-indicator purple"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <img src="{% static 'assets/excel-icon.png' %}" alt="Excel" class="excel-icon">
+        <div class="file-input-container">
+            <input type="file" id="fileUpload" class="upload-button" accept=".xls">
+            <label for="fileUpload" class="file-label">Upload File (.xls)</label>
+        </div>
+    </div>
+
+    <script>
+        // Get all the rating options
+        const overallOption = document.getElementById('overall-option');
+        const departmentOptions = [
+            document.getElementById('a-option'),
+            document.getElementById('b-option'),
+            document.getElementById('c-option'),
+            document.getElementById('d-option'),
+            document.getElementById('e-option')
+        ];
+        
+        // Get the content sections
+        const homepageContent = document.getElementById('homepage-content');
+        const departmentContent = document.getElementById('department-content');
+        
+        // Set active class for rating options
+        document.querySelectorAll('.rating-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.rating-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Show appropriate content based on which option was clicked
+                if (this.id === 'overall-option') {
+                    homepageContent.classList.add('active');
+                    departmentContent.classList.remove('active');
+                } else {
+                    homepageContent.classList.remove('active');
+                    departmentContent.classList.add('active');
+                    
+                    // You can update department name based on which option was clicked
+                    const deptName = document.querySelector('#department-content .left-side .stat-box span:first-child');
+                    if (this.id === 'a-option') {
+                        deptName.textContent = "DEPARTMENT A";
+                    } else if (this.id === 'b-option') {
+                        deptName.textContent = "DEPARTMENT B";
+                    } else if (this.id === 'c-option') {
+                        deptName.textContent = "DEPARTMENT C";
+                    } else if (this.id === 'd-option') {
+                        deptName.textContent = "DEPARTMENT D";
+                    } else if (this.id === 'e-option') {
+                        deptName.textContent = "DEPARTMENT E";
+                    }
+                }
+            });
+        });
+        
+        // Set active class for sidebar options
+        document.querySelectorAll('.sidebar-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        document.getElementById("audit-logs").addEventListener("click", function() {
+            window.location.href = "{% url 'audit_logs' %}";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Management System</title>
+    <link rel="stylesheet" href="{% static '/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static '/css/general.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'attendance' %}">ATTENDANCE</a></li>
+                <li><a href="{% url 'payroll' %}">PAYROLL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-option active" id="list-profile">LIST OF PROFILES</div>
+            <div class="sidebar-option" id="manage-profiles">MANAGE PROFILES</div>
+            <div class="sidebar-option" id="employee-filings">EMPLOYEE FILINGS</div>
+            
+   
+            <div id="attendance-sidebar">
+                <div class="sidebar-option">AUDIT LOGS</div>
+            </div>
+        </div>
+
+
+        <div class="main-content">
+           
+            <div id="profile-content" class="active">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="{% static 'assets/luzon.jpg' %}" alt="Employee Photo">
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-row">
+                            <div class="detail-label">NAME</div>
+                            <div class="detail-value">DANN MARTIN LEYES</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">AGE</div>
+                            <div class="detail-value">20</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">ID NUMBER</div>
+                            <div class="detail-value">300121</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">DEPARTMENT</div>
+                            <div class="detail-value">HUMAN RESOURCES</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">CONTACT</div>
+                            <div class="detail-value">0905090568</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">ADDRESS</div>
+                            <div class="detail-value">DON SA KANTO</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <!-- Money icon placeholder -->
+                            <span style="color: white;">$</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">845.45/Hr</div>
+                            <div class="stat-label">RATES</div>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <!-- Clock icon placeholder -->
+                            <span style="color: white;">⏰</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">12/12</div>
+                            <div class="stat-label">PAID LEAVE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <div class="upload-section">
+        <img src="{% static 'assets/excel-icon.png' %}" alt="Excel" class="excel-icon">
+        <div class="file-input-container">
+            <input type="file" id="fileUpload" class="upload-button" accept=".xls">
+            <label for="fileUpload" class="file-label">Upload File (.xls)</label>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.rating-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.rating-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        document.querySelectorAll('.sidebar-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+  document.getElementById("list-profile").addEventListener("click", function() {
+            window.location.href = "{% url 'profile' %}";
+        });
+
+        document.getElementById("manage-profiles").addEventListener("click", function() {
+            window.location.href = "{% url 'manage_profiles' %}";
+        });
+
+        document.getElementById("employee-filings").addEventListener("click", function() {
+            window.location.href = "{% url 'employee_filings' %}";
+        });
+
+    </script>
+    
+</body>
+
+</html>

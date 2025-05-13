@@ -1,0 +1,305 @@
+  /* Calendar navigation styles */
+        .calendar-nav {
+            display: inline-block;
+            float: right;
+        }
+
+        .calendar-nav span {
+            cursor: pointer;
+            margin: 0 5px;
+            color: #666;
+            font-size: 14px;
+            transition: color 0.3s;
+            user-select: none;
+        }
+
+        .calendar-nav span:hover {
+            color: #BDC4FF;
+        }
+
+        /* Empty day styling */
+        .day.empty {
+            background-color: transparent;
+            cursor: default;
+        }
+
+        /* Calendar container adjustments */
+        .calendar {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        /* Make calendar header row more distinct */
+        .calendar-section h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        /* Additional styles for the popup */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 25px;
+            width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .overtime-container {
+            width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .filing-container {
+            width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .application-option {
+            background-color: #BDC4FF;
+            color: white;
+            font-weight: bold;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .application-option:hover {
+            background-color: #A7ABDE;
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Hidden content section */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Overtime Application Form Styles */
+        .form-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .calendar-section {
+            flex: 1;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+        }
+
+        .calendar-section h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .dropdown-arrow {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .calendar {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .day {
+            padding: 10px 0;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .day.active {
+            background-color: #BDC4FF;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        .day.highlight {
+            background-color: rgba(189, 196, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .attendance-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .attendance-item {
+            margin-bottom: 15px;
+        }
+
+        .attendance-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .attendance-value {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .overtime-hours {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .hours,
+        .minutes {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        .reason-section {
+            margin: 20px 0;
+        }
+
+        .reason-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .reason-input {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: inherit;
+            background-color: #e6e6e6;
+            resize: none;
+        }
+
+        .date-select-btn,
+        .submit-btn {
+            background-color: #BDC4FF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+        }
+
+        .date-select-btn:hover,
+        .submit-btn:hover {
+            background-color: #A7ABDE;
+        }
+
+        /* Styles for Leave and OB Applications */
+        .attachments-section {
+            margin: 20px 0;
+        }
+
+        .attachments-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .attach-btn {
+            background-color: #e6e6e6;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .multiple-dates-checkbox {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-input {
+            margin-right: 10px;
+        }

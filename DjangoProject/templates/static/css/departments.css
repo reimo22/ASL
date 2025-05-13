@@ -1,0 +1,165 @@
+/* Departments page specific styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-option {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #B0C4DE;
+    border-bottom: 2px solid #A0B4CE;
+    cursor: pointer;
+}
+
+.rating-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.rating-options {
+    display: flex;
+    justify-content: center;
+    background-color: #FF99C8;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+.rating-option {
+    padding: 10px 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.rating-option.active {
+    background-color: white;
+    color: #FF99C8;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: #FF99C8;
+    padding: 20px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.diagram-box {
+    background-color: #CED1F8;
+    border: 5px solid #A7ABDE;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrollable-list {
+    background-color: #FF99C8;
+    padding: 20px;
+    border-radius: 30px;
+    border: 5px solid #DA13A8;
+    max-height: 400px;
+    overflow-y: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.scrollable-list h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.scrollable-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.scrollable-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.member-indicator.pink {
+    background-color: #FF6EB4;
+}
+
+.member-indicator.purple {
+    background-color: #A4B3EE;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content visibility control */
+#profile-content, #attendance-content {
+    display: none;
+    width: 100%;
+}
+
+#profile-content.active, #attendance-content.active {
+    display: block;
+}
+
+#profile-sidebar, #attendance-sidebar {
+    display: none;
+}
+
+#profile-sidebar.active, #attendance-sidebar.active {
+    display: flex;
+    flex-direction: column;
+}

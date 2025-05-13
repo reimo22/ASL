@@ -1,0 +1,123 @@
+/* Attendance page specific styling */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FF99C8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    align-items: center;
+}
+
+.report-title {
+    flex: 1;
+}
+
+.report-date {
+    text-align: right;
+}
+
+.employee-info-section {
+    display: flex;
+    gap: 20px;
+}
+
+.employee-name, .department {
+    background-color: #FF99C8;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    flex: 1;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.leave-status-section {
+    display: flex;
+    gap: 10px;
+    background-color: #FF99C8;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.status-item {
+    flex: 1;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+    border-right: 2px solid white;
+}
+
+.status-item:last-child {
+    border-right: none;
+}
+
+.daily-log-section, .monthly-calendar {
+    background-color: #FF99C8;
+    border-radius: 20px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.daily-log-table, .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #FF80BF;
+    padding: 8px;
+    text-align: center;
+    background-color: #FFB6D9;
+}
+
+th {
+    background-color: #FF99C8;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.summary-section {
+    background-color: #FF99C8;
+    border-radius: 20px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.daily-log-section, .monthly-calendar {
+    overflow-x: auto;
+}
+
+/* Sidebar Dropdown Styles */
+.sidebar select.date-dropdown {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #e6f7ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.sidebar select.date-dropdown:focus {
+    border-color: #80bfff;
+    outline: none;
+    background-color: #cceeff;
+}

@@ -1,0 +1,68 @@
+/* Payroll specific styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-option {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #FFB6D9;
+    border-bottom: 2px solid #FF99C8;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #FF99C8;
+}
+
+.search-bar .filter-icon {
+    padding: 8px;
+    background-color: #E6E6E6;
+    border: 1px solid #FF99C8;
+}
+
+.payroll-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #FF99C8;
+}
+
+th, td {
+    border: 1px solid #FF99C8;
+    padding: 10px;
+    text-align: left;
+    background-color: #FFD6EA;
+}
+
+th {
+    background-color: #FFC1E0;
+    color: white;
+    font-weight: bold;
+}

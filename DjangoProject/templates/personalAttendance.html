@@ -1,0 +1,234 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HR Management System - Personal Attendance</title>
+    <link rel="stylesheet" href="{% static 'css/personalAttendance.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'employee_profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'filings' %}">PERSONAL ATTENDANCE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+
+        </div>
+
+        <div class="main-content">
+            <div class="date-range-container">
+                <div class="date-range-selector" id="dateRangeSelector">
+                    Date Range: Jan 1 - 15, 2025
+                </div>
+                <div id="dateRangeDropdown" class="dropdown-content">
+                    <a href="#" class="dropdown-option" data-range="Jan 1 - 15, 2025">Jan 1 - 15, 2025</a>
+                    <a href="#" class="dropdown-option" data-range="Jan 16 - 31, 2025">Jan 16 - 31, 2025</a>
+                    <a href="#" class="dropdown-option" data-range="Feb 1 - 15, 2025">Feb 1 - 15, 2025</a>
+                    <a href="#" class="dropdown-option" data-range="Feb 16 - 28, 2025">Feb 16 - 28, 2025</a>
+                </div>
+            </div>
+
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>MORNING IN</th>
+                        <th>MORNING OUT</th>
+                        <th>AFTERNOON IN</th>
+                        <th>AFTERNOON OUT</th>
+                        <th>FORMAL HOUR</th>
+                        <th>OVERTIME</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-column">1</td>
+                        <td>7:00 AM</td>
+                        <td>12:00 NN</td>
+                        <td>12:48 NN</td>
+                        <td>6:04 PM</td>
+                        <td></td>
+                        <td>1 hr 04 mins</td>
+                        <td><button class="file-overtime-btn">File Overtime</button></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">2</td>
+                        <td>6:59 AM</td>
+                        <td>12:02 NN</td>
+                        <td>12:52 NN</td>
+                        <td>4:56 PM</td>
+                        <td></td>
+                        <td>0 hr 00 mins</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">3</td>
+                        <td>7:05 AM</td>
+                        <td>12:00 NN</td>
+                        <td>12:55 NN</td>
+                        <td>5:05 PM</td>
+                        <td></td>
+                        <td>0 hr 05 mins</td>
+                        <td><button class="file-overtime-btn">File Overtime</button></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">4</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">5</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">6</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">7</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">8</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">9</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">10</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">11</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">12</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">13</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">14</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-column">15</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const dateRangeSelector = document.getElementById("dateRangeSelector");
+        const dateRangeDropdown = document.getElementById("dateRangeDropdown");
+
+        dateRangeSelector.addEventListener("click", () => {
+            dateRangeDropdown.classList.toggle("show");
+        });
+
+        document.querySelectorAll(".dropdown-option").forEach(option => {
+            option.addEventListener("click", function(e) {
+                e.preventDefault();
+                const selectedRange = this.getAttribute("data-range");
+                dateRangeSelector.textContent = `Date Range: ${selectedRange}`;
+                dateRangeDropdown.classList.remove("show");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dateRangeSelector.contains(e.target) && !dateRangeDropdown.contains(e.target)) {
+                dateRangeDropdown.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+</html>

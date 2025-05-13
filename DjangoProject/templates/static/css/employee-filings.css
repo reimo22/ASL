@@ -1,0 +1,129 @@
+/* Employee Filings Page Specific Styles */
+.page-title {
+    font-size: 42px;
+    color: #FF99C8;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.filter-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.filter-tab {
+    background-color: #D4D9F8;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-tab.active {
+    background-color: #B0C4DE;
+}
+
+.filings-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #FFF5F6;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.filings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.filings-table th {
+    background-color: #B0C4DE;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.filings-table td {
+    padding: 12px 15px;
+    background-color: #F8E1EB;
+    border: 1px solid white;
+}
+
+.filings-table tr:hover td {
+    background-color: #F5D0E0;
+}
+.upload-section {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFD6EA;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.excel-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.file-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-button {
+    display: none;
+}
+
+.file-label {
+    background-color: #FF80BF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #FF6EB4;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .page-title {
+        font-size: 32px;
+    }
+    
+    .filings-table th, 
+    .filings-table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Content visibility control */
+#employee-filings-content {
+    display: none;
+    width: 100%;
+}
+
+#employee-filings-content.active {
+    display: block;
+}

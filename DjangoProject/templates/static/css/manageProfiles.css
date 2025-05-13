@@ -1,0 +1,205 @@
+/* Manage profiles specific styling */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-option {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #B0C4DE;
+    border-bottom: 2px solid #A0B4CE;
+    cursor: pointer;
+}
+
+.sidebar-option.active {
+    background-color: #A7ABDE;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+}
+
+.employee-list {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.employee-form {
+    width: 60%;
+}
+
+.profiling-header {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF99C8;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #FF99C8;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #B0C4DE;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #B0C4DE;
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+th {
+    background-color: #B0C4DE;
+    color: white;
+    font-weight: bold;
+}
+
+.search-bar {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    flex-grow: 1;
+    border: 1px solid #B0C4DE;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+.search-bar .filter-icon {
+    padding: 10px;
+    background-color: #B0C4DE;
+    border: 1px solid #B0C4DE;
+    border-radius: 5px;
+    color: white;
+    margin-right: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    width: 200px;
+    text-align: right;
+    margin-right: 15px;
+    color: #FF99C8;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #FF99C8;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.button-row {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-update, .btn-add {
+    background-color: #B0C4DE;
+}
+
+.btn-update:hover, .btn-add:hover {
+    background-color: #A0B4CE;
+}
+
+.btn-clear {
+    background-color: #B0C4DE;
+}
+
+.btn-clear:hover {
+    background-color: #A0B4CE;
+}
+
+.btn-delete {
+    background-color: #B33A3A;
+}
+
+.btn-delete:hover {
+    background-color: #A33030;
+}
+
+.pay-rate-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.pay-rate-suffix {
+    position: absolute;
+    right: 10px;
+    color: #999;
+}
+
+.deduction-section {
+    margin-top: 20px;
+}
+
+.deduction-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.deduction-header input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #B0C4DE;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-button {
+    background-color: #B0C4DE;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}

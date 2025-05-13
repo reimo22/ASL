@@ -1,0 +1,369 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Management System</title>
+    <link rel="stylesheet" href="{% static 'css/employee-filings2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/employee-filings3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'employee_profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'filings' %}">PERSONAL ATTENDANCE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-option active" id="employeeProfiles">PROFILE</div>
+            <div class="sidebar-option" id="employeeFilings">FILINGS</div>
+        </div>
+
+        <div class="main-content">
+
+            <div id="profile-content" class="content-section active">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="../assets/luzon.jpg" alt="Employee Photo">
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="detail-row">
+                            <div class="detail-label">NAME</div>
+                            <div class="detail-value">DANN MARTIN LEYES</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">AGE</div>
+                            <div class="detail-value">20</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">ID NUMBER</div>
+                            <div class="detail-value">300121</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">DEPARTMENT</div>
+                            <div class="detail-value">HUMAN RESOURCES</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">CONTACT</div>
+                            <div class="detail-value">0905090568</div>
+                        </div>
+                        <div class="detail-row">
+                            <div class="detail-label">ADDRESS</div>
+                            <div class="detail-value">DON SA KANTO</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <span style="color: white;">$</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">845.45/Hr</div>
+                            <div class="stat-label">RATES</div>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <span style="color: white;">⏰</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value">12/12</div>
+                            <div class="stat-label">PAID LEAVE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="filings-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Filing Type</th>
+                            <th>My Shift</th>
+                            <th>Attendance Log</th>
+                            <th>Reason</th>
+                            <th>Attachments</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar. 03, 2025</td>
+                            <td>Overtime</td>
+                            <td>09:00 - 17:00</td>
+                            <td>09:05 - 22:07</td>
+                            <td>Masyado po akong sinipag</td>
+                            <td></td>
+                            <td>
+                                <div class="not-approved">NOT APPROVED</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mar. 07, 2025</td>
+                            <td>OB</td>
+                            <td>09:00 - 17:00</td>
+                            <td>-</td>
+                            <td>Team building activity</td>
+                            <td></td>
+                            <td>
+                                <div class="approved">APPROVED</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="filings-content" class="content-section">
+                <table class="filings-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Filing Type</th>
+                            <th>My Shift</th>
+                            <th>Attendance Log</th>
+                            <th>Reason</th>
+                            <th>Attachments</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar. 03, 2025</td>
+                            <td>Overtime</td>
+                            <td>09:00 - 17:00</td>
+                            <td>09:05 - 22:07</td>
+                            <td>Masyado po akong sinipag</td>
+                            <td></td>
+                            <td>
+                                <div class="not-approved">NOT APPROVED</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mar. 07, 2025</td>
+                            <td>OB</td>
+                            <td>09:00 - 17:00</td>
+                            <td>-</td>
+                            <td>Team building activity</td>
+                            <td></td>
+                            <td>
+                                <div class="approved">APPROVED</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="newFilingBtn" class="filing-button">New Filing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filing Type Selection Modal -->
+    <div class="modal-overlay" id="filingModal">
+        <div class="modal-container">
+            <div class="modal-title">Please Specify Your Application</div>
+            <div class="modal-subtitle">Employee Filing Application Form</div>
+
+            <div class="application-option" id="overtimeApp">Overtime Application</div>
+            <div class="application-option" id="leaveApp">Paid Leave Application</div>
+            <div class="application-option" id="obApp">Official Business Application</div>
+        </div>
+    </div>
+
+    <!-- Overtime Application Modal -->
+    <div class="modal-overlay" id="overtimeModal">
+        <div class="modal-container overtime-container">
+            <div class="close-btn" id="closeOvertimeBtn">&times;</div>
+            <div class="modal-title">Overtime Application</div>
+            <div class="modal-subtitle">Employee Filing Application Form</div>
+
+            <div class="overtime-form">
+                <div class="form-row">
+                    <div class="calendar-section">
+                        <h3>March 2025 <span class="dropdown-arrow">▼</span></h3>
+                        <div class="calendar">
+                            <div class="calendar-header">
+                                <div>S</div>
+                                <div>M</div>
+                                <div>T</div>
+                                <div>W</div>
+                                <div>T</div>
+                                <div>F</div>
+                                <div>S</div>
+                            </div>
+                            <div class="calendar-days">
+                                <div class="day">1</div>
+                                <div class="day">2</div>
+                                <div class="day highlight">3</div>
+                                <div class="day">4</div>
+                                <div class="day">5</div>
+                                <div class="day">6</div>
+                                <div class="day">7</div>
+                                <div class="day">8</div>
+                                <div class="day">9</div>
+                                <div class="day">10</div>
+                                <div class="day">11</div>
+                                <div class="day">12</div>
+                                <div class="day">13</div>
+                                <div class="day">14</div>
+                                <div class="day">15</div>
+                                <div class="day">16</div>
+                                <div class="day">17</div>
+                                <div class="day">18</div>
+                                <div class="day">19</div>
+                                <div class="day">20</div>
+                                <div class="day active">21</div>
+                                <div class="day">22</div>
+                                <div class="day">23</div>
+                                <div class="day">24</div>
+                                <div class="day">25</div>
+                                <div class="day">26</div>
+                                <div class="day">27</div>
+                                <div class="day">28</div>
+                                <div class="day">29</div>
+                                <div class="day">30</div>
+                            </div>
+                        </div>
+                        <button class="date-select-btn">Select Date</button>
+                    </div>
+
+                    <div class="attendance-section">
+                        <div class="attendance-item">
+                            <div class="attendance-label">Attendance Logs</div>
+                            <div class="attendance-value">09:00 AM - 10:07 PM</div>
+                        </div>
+                        <div class="attendance-item">
+                            <div class="attendance-label">Overtime</div>
+                            <div class="attendance-value">05:00 PM - 10:07 PM</div>
+                        </div>
+                        <div class="overtime-hours">
+                            <span class="hours">5</span> HRS
+                            <span class="minutes">7</span> MINS
+                        </div>
+
+                        <div class="reason-section">
+                            <div class="reason-label">Reason</div>
+                            <textarea class="reason-input" placeholder="Enter your reason for overtime"></textarea>
+                        </div>
+
+                        <button class="submit-btn">Submit Application</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paid Leave Application Modal -->
+    <div class="modal-overlay" id="leaveModal">
+        <div class="modal-container filing-container">
+            <div class="close-btn" id="closeLeaveBtn">&times;</div>
+            <div class="modal-title">Paid Leave Application</div>
+            <div class="modal-subtitle">Employee Filing Application Form</div>
+
+            <div class="form-row">
+                <div class="calendar-section">
+                    <h3>March 2025 <span class="dropdown-arrow">▼</span></h3>
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <div>S</div>
+                            <div>M</div>
+                            <div>T</div>
+                            <div>W</div>
+                            <div>T</div>
+                            <div>F</div>
+                            <div>S</div>
+                        </div>
+                        <div class="calendar-days" id="leaveCalendarDays">
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    <button class="date-select-btn">Select Date</button>
+
+                    <div class="multiple-dates-checkbox">
+                        <input type="checkbox" id="leaveMultipleDates" class="checkbox-input">
+                        <label for="leaveMultipleDates">Select Multiple Dates</label>
+                    </div>
+                </div>
+
+                <div class="attendance-section">
+                    <div class="reason-section">
+                        <div class="reason-label">Reason</div>
+                        <textarea class="reason-input" id="leaveReason"
+                            placeholder="Enter your reason for leave"></textarea>
+                    </div>
+
+                    <div class="attachments-section">
+                        <div class="attachments-label">Attachments</div>
+                        <button class="attach-btn">Attach Files</button>
+                    </div>
+
+                    <button class="submit-btn" id="leaveSubmitBtn">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Official Business Application Modal -->
+    <div class="modal-overlay" id="obModal">
+        <div class="modal-container filing-container">
+            <div class="close-btn" id="closeObBtn">&times;</div>
+            <div class="modal-title">Official Business Application</div>
+            <div class="modal-subtitle">Employee Filing Application Form</div>
+
+            <div class="form-row">
+                <div class="calendar-section">
+                    <h3>March 2025 <span class="dropdown-arrow">▼</span></h3>
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <div>S</div>
+                            <div>M</div>
+                            <div>T</div>
+                            <div>W</div>
+                            <div>T</div>
+                            <div>F</div>
+                            <div>S</div>
+                        </div>
+                        <div class="calendar-days" id="obCalendarDays">
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                    <button class="date-select-btn">Select Date</button>
+
+                    <div class="multiple-dates-checkbox">
+                        <input type="checkbox" id="obMultipleDates" class="checkbox-input">
+                        <label for="obMultipleDates">Select Multiple Dates</label>
+                    </div>
+                </div>
+
+                <div class="attendance-section">
+                    <div class="reason-section">
+                        <div class="reason-label">Reason</div>
+                        <textarea class="reason-input" id="obReason"
+                            placeholder="Enter your reason for official business"></textarea>
+                    </div>
+
+                    <div class="attachments-section">
+                        <div class="attachments-label">Attachments</div>
+                        <button class="attach-btn">Attach Files</button>
+                    </div>
+
+                    <button class="submit-btn" id="obSubmitBtn">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/employee-profile.js' %}"></script>
+</body>
+
+</html>

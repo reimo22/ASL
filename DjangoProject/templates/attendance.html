@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report</title>
+    <!-- Use Django static files for CSS -->
+    <link rel="stylesheet" href="{% static '/css/attendance.css' %}">
+    <link rel="stylesheet" href="{% static '/css/general.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <!-- Use Django static files for image -->
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'attendance' %}">ATTENDANCE</a></li>
+                <li><a href="{% url 'payroll' %}">PAYROLL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-option active" id="executives">EXECUTIVES</div>
+            <div class="sidebar-option" id="order-fulfillment">ORDER FULFILLMENT</div>
+            <div class="sidebar-option" id="creatives">CREATIVES</div>
+            <div class="sidebar-option" id="inventory">INVENTORY</div>
+            <div class="sidebar-option" id="production">PRODUCTION</div>
+        </div>
+
+        <div class="main-content">
+            <div class="report-header">
+                <div class="report-title">ATTENDANCE REPORT</div>
+                <div class="report-date">
+                    <label for="reportDateDropdown">DATE: </label>
+                    <select id="reportDateDropdown" class="date-dropdown">
+                        <option value="january-1st-half-2026">January 1st Half, 2025</option>
+                        <option value="january-2nd-half-2026">January 2nd Half, 2025</option>
+                        <option value="february-1st-half-2026">February 1st Half, 2025</option>
+                        <option value="february-2nd-half-2026">February 2nd Half, 2025</option>
+                        <!-- Add more options here as needed -->
+                    </select>
+                </div>
+            </div>
+
+            <div class="employee-info-section">
+                <div class="employee-name">DANN MARTIN LEYES</div>
+                <div class="department">HUMAN RESOURCES</div>
+            </div>
+
+            <div class="leave-status-section">
+                <div class="status-item">SICK LEAVE</div>
+                <div class="status-item">PAID LEAVE</div>
+                <div class="status-item">LATE</div>
+                <div class="status-item">ABSENT</div>
+            </div>
+
+            <div class="daily-log-section">
+                <table class="daily-log-table">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>MORNING IN</th>
+                            <th>MORNING OUT</th>
+                            <th>AFTERNOON IN</th>
+                            <th>AFTERNOON OUT</th>
+                            <th>NORMAL HOUR</th>
+                            <th>OVERTIME</th>
+                            <th></th> <!-- Empty header for the new checkmark column -->
+                            <th>TOTAL TIME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="checkbox" class="overtime-check"></td> <!-- Checkmark column -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="checkbox" class="overtime-check"></td> <!-- Checkmark column -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="checkbox" class="overtime-check"></td> <!-- Checkmark column -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="checkbox" class="overtime-check"></td> <!-- Checkmark column -->
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5...15</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><input type="checkbox" class="overtime-check"></td> <!-- Checkmark column -->
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="summary-section"></div>
+        </div>
+    </div>
+
+    <div class="upload-section">
+        <img src="{% static 'assets/excel-icon.png' %}" alt="Excel" class="excel-icon">
+        <div class="file-input-container">
+            <input type="file" id="fileUpload" class="upload-button" accept=".xls">
+            <label for="fileUpload" class="file-label">Upload File (.xls)</label>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.rating-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.rating-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.sidebar-option').forEach(option => {
+            option.addEventListener('click', function () {
+                document.querySelectorAll('.sidebar-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

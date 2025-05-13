@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link rel="stylesheet" href="{% static '/css/general.css' %}">
+    <link rel="stylesheet" href="{% static '/css/payroll.css' %}">
+    
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/logoEstained.png' %}" alt="Estained Icon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'homepage' %}">HOME</a></li>
+                <li><a href="{% url 'profile' %}">PROFILE</a></li>
+                <li><a href="{% url 'attendance' %}">ATTENDANCE</a></li>
+                <li><a href="{% url 'payroll' %}">PAYROLL</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-option" id="calendar">CALENDAR</div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-section">
+                <div class="search-bar">
+                    <button class="filter-icon">⌄</button>
+                    <input type="text" placeholder="Search by ID or Employee Name">
+                </div>
+                <label for="reportDateDropdown">DATE: </label>
+                    <select id="reportDateDropdown" class="date-dropdown">
+                        <option value="january-1st-half-2026">January 1st Half, 2025</option>
+                        <option value="january-2nd-half-2026">January 2nd Half, 2025</option>
+                        <option value="february-1st-half-2026">February 1st Half, 2025</option>
+                        <option value="february-2nd-half-2026">February 2nd Half, 2025</option>
+                        <!-- Add more options here as needed -->
+                    </select>
+            </div>
+
+            <div class="payroll-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Daily Rate</th>
+                            <th>Overtime Rate</th>
+                            <th>Normal Time Salary</th>
+                            <th>Overtime Salary</th>
+                            <th>Gross Salary</th>
+                            <th>Deductions</th>
+                            <th>Tax</th>
+                            <th>Net Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Add more empty rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="upload-section">
+        <img src="{% static 'assets/excel-icon.png' %}" alt="Excel" class="excel-icon">
+        <div class="file-input-container">
+            <input type="file" id="fileUpload" class="upload-button" accept=".xls">
+            <label for="fileUpload" class="file-label">Upload File (.xls)</label>
+        </div>
+    </div>
+    <script>
+                  document.getElementById("calendar").addEventListener("click", function() {
+            window.location.href = "{% url 'calendar' %}";
+        });
+    </script>
+</body>
+</html>
