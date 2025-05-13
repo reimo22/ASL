@@ -24,7 +24,7 @@ Django-based payroll web system for Estained in partial fulfillment of Info Mana
 3.  **Install Python dependencies:**
     ```bash
     pip install django django-widget-tweaks
-    # pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 4.  **Navigate to the Django project directory:**
